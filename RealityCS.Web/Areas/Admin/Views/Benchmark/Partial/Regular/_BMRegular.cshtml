@@ -1,0 +1,45 @@
+﻿@model dynamic
+@{
+    string kpiname = (dynamic)Model.kpiname;
+    string kpicd = (dynamic)Model.kpicd;
+    string operation = (dynamic)Model.operation;
+
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <label id="lblKpiName">@kpiname</label>
+        </div>
+        <div class="col-md-6">
+            <select id="ddlTimelines" class="form-control">
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table id="dtgrdvRegBm" class="table table-sm"></table>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" value="Save" class="btn-save-modalbtn btn-sm w-auto mb-4 ml-2" onclick="benchmark_bmregular.saveBenchmark()">Save</button>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+        $(document).ready(() => {
+            benchmark_bmregular.initialize('@kpicd', '@operation')
+             benchmark_bmregular.fillComboTimeline('@kpicd')
+
+
+        })
+
+
+</script>
+

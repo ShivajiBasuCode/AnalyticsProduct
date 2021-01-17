@@ -1,0 +1,107 @@
+2020-09-16 18:01:15.5572 Info Message Template Auto Format enabled
+2020-09-16 18:01:15.5934 Info Loading assembly: NLog.Web.AspNetCore
+2020-09-16 18:01:15.7853 Info Adding target FileTarget(Name=allfile)
+2020-09-16 18:01:15.7853 Info Adding target FileTarget(Name=ownFile-web)
+2020-09-16 18:01:15.8832 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=65, FilePath=C:\Shivaji\RealitycsNew\Code\Workspace\RealityCS.Web\bin\Debug\netcoreapp3.1\nlog.config
+2020-09-16 18:01:16.2101 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-09-16/nlog-all-2020-09-16.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-09-16
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-09-16 18:01:16.3363 Error FileTarget(Name=ownFile-web): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-09-16/nlog-own-2020-09-16.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-09-16
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-09-16 18:01:23.4475 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-09-16/nlog-all-2020-09-16.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-09-16
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-09-16 18:01:23.4682 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-09-16/nlog-all-2020-09-16.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-09-16
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-09-16 18:01:23.4682 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-09-16/nlog-all-2020-09-16.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-09-16
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-09-16 18:19:45.5111 Info Message Template Auto Format enabled
+2020-09-16 18:19:45.5442 Info Loading assembly: NLog.Web.AspNetCore
+2020-09-16 18:19:45.7370 Info Adding target FileTarget(Name=allfile)
+2020-09-16 18:19:45.7490 Info Adding target FileTarget(Name=ownFile-web)
+2020-09-16 18:19:45.8761 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=65, FilePath=C:\Shivaji\RealitycsNew\Code\Workspace\RealityCS.Web\bin\Debug\netcoreapp3.1\nlog.config
+2020-09-16 18:19:46.1026 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-09-16/nlog-all-2020-09-16.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-09-16
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-09-16 18:19:46.1907 Error FileTarget(Name=ownFile-web): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-09-16/nlog-own-2020-09-16.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-09-16
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-09-16 18:19:49.1859 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-09-16/nlog-all-2020-09-16.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-09-16
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-09-16 18:19:49.2151 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-09-16/nlog-all-2020-09-16.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-09-16
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-09-16 18:19:49.2151 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-09-16/nlog-all-2020-09-16.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-09-16
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-10-04 12:41:50.6941 Info Message Template Auto Format enabled
+2020-10-04 12:41:50.7646 Info Loading assembly: NLog.Web.AspNetCore
+2020-10-04 12:41:50.9869 Info Adding target FileTarget(Name=allfile)
+2020-10-04 12:41:50.9869 Info Adding target FileTarget(Name=ownFile-web)
+2020-10-04 12:41:51.0920 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=65, FilePath=C:\Shivaji\RealitycsNew\Code\Workspace\RealityCS.Web\bin\Debug\netcoreapp3.1\nlog.config
+2020-10-04 12:41:51.3908 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-10-04/nlog-all-2020-10-04.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-10-04
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-10-04 12:41:51.4554 Error FileTarget(Name=ownFile-web): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-10-04/nlog-own-2020-10-04.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-10-04
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-10-04 12:41:56.3230 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-10-04/nlog-all-2020-10-04.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-10-04
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-10-04 12:41:56.3507 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-10-04/nlog-all-2020-10-04.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-10-04
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-10-04 12:41:56.3507 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-10-04/nlog-all-2020-10-04.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-10-04
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-12-21 14:04:12.9481 Info Message Template Auto Format enabled
+2020-12-21 14:04:12.9773 Info Loading assembly: NLog.Web.AspNetCore
+2020-12-21 14:04:13.1759 Info Adding target FileTarget(Name=allfile)
+2020-12-21 14:04:13.2048 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-21 14:04:13.2830 Info Validating config: TargetNames=allfile, ownFile-web, ConfigItems=65, FilePath=C:\Shivaji\RealitycsNew\Code\Workspace\RealityCS.Web\bin\Debug\netcoreapp3.1\nlog.config
+2020-12-21 14:04:13.4550 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-12-21/nlog-all-2020-12-21.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-12-21
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-12-21 14:04:13.4901 Error FileTarget(Name=ownFile-web): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-12-21/nlog-own-2020-12-21.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-12-21
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-12-21 14:04:14.6888 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-12-21/nlog-all-2020-12-21.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-12-21
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-12-21 14:04:14.7197 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-12-21/nlog-all-2020-12-21.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-12-21
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-12-21 14:04:14.7197 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-12-21/nlog-all-2020-12-21.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-12-21
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-12-21 14:05:16.6653 Error FileTarget(Name=allfile): Failed write to file 'E:/PROJECT/RealitycsNew/Code/RealityCS/RealityCS.Web/nlog/logs-2020-12-21/nlog-all-2020-12-21.log'. Exception: NLog.NLogRuntimeException: Could not create directory E:\PROJECT\RealitycsNew\Code\RealityCS\RealityCS.Web\nlog\logs-2020-12-21
+   at NLog.Internal.FileAppenders.BaseFileAppender.CreateFileStream(Boolean allowFileSharedWriting, Int32 overrideBufferSize)
+   at NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender.Write(Byte[] bytes, Int32 offset, Int32 count)
+   at NLog.Targets.FileTarget.WriteToFile(String fileName, ArraySegment`1 bytes, Boolean initializedNewFile)
+2020-12-21 14:05:16.6928 Info Shutdown() called. Logger closing...
+2020-12-21 14:05:16.7024 Info Closing old configuration.
+2020-12-21 14:05:16.7195 Info Logger has been closed down.

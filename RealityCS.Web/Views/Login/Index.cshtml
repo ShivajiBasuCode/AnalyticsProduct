@@ -1,0 +1,156 @@
+﻿@{
+    Layout = null;
+
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/css/responsive.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Login</title>
+
+
+</head>
+<body>
+    <div class="container-fluid wrapper">
+        <div class="cont">
+            <div class="form sign-in">
+                <div class="text-center" style="height:55px;">
+                    <img class="main-logo p-3 w-50 res-logo-size" src="images/logo.jpg" alt="" style="height:auto" asp-append-version="true" />
+                </div>
+
+                <!-- SignIn Form -->
+                <form id="signin" class="py-5" method="post">
+                    <span>@ViewBag.loginerror</span>
+                    <input type="hidden" value="@ViewBag.ReturnUrl" name="ReturnUrl" />
+                    <div class="form-group">
+                        <label class="labelColor" for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label class="labelColor" for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                    </div>
+                    <button type="submit" class="submit">Sign In</button>
+                    @*<button type="button" class="fb-btn">Connect with <span>facebook</span></button>*@
+                    <p class="res-sign-text text-center m-5">
+                        Not created an account?
+                        <span class="res-sign-color"><a id="switchForm" href="#">SignUp</a></span>
+                    </p>
+
+                </form>
+                <!-- SignIn Form -->
+                <!-- SignUp Form -->
+                <form id="signup" class="py-5 d-xl-none">
+                    <div class="form-group">
+                        <label class="labelColor">Name</label>
+                        <input type="email" class="form-control" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label class="labelColor">Email address</label>
+                        <input type="email" class="form-control" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                        <label class="labelColor">Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    <button type="button" class="submit">Sign Up</button>
+                    @*<button type="button" class="fb-btn">Connect with <span>facebook</span></button>*@
+                    <p class="res-sign-text text-center m-5">
+                        Already having an  account?
+                        <span class="res-sign-color"><a id="switchForm1" href="#">SignIn</a></span>
+                    </p>
+
+                </form>
+
+                <!-- SignUp Form -->
+            </div>
+
+            <div class="sub-cont">
+                <div class="img">
+                    <div class="img__text m--up">
+                        <h2>New here?</h2>
+                        <p>Sign up and discover great amount of new opportunities!</p>
+                    </div>
+                    <div class="img__text m--in">
+                        <h2>One of us?</h2>
+                        <p>If you already has an account, just sign in. We've missed you!</p>
+                    </div>
+                    <div class="img__btn">
+                        <span class="m--up">Sign Up</span>
+                        <span class="m--in">Sign In</span>
+                    </div>
+                </div>
+                <div class="form sign-up">
+                    <div class="text-center" style="height:55px;">
+                        <img class="main-logo p-3 w-50 res-logo-size" src="images/logo.jpg" alt="" style="height:auto" />
+                    </div>
+                    <!-- SignUp Form -->
+                    <form class="py-5">
+                        <div class="form-group">
+                            <label class="labelColor">Name</label>
+                            <input type="email" class="form-control" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <label class="labelColor">Email address</label>
+                            <input type="email" class="form-control" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <label class="labelColor">Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        <button type="button" class="submit">Sign Up</button>
+                        @*<button type="button" class="fb-btn">Connect with <span>facebook</span></button>*@
+                        <p class="res-sign-text text-center m-5">
+                            Already having an  account?
+                            <span class="res-sign-color"><a href="#">SignIn</a></span>
+                        </p>
+
+                    </form>
+
+                    <!-- SignUp Form -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        document.querySelector('.img__btn').addEventListener('click', function () {
+            document.querySelector('.cont').classList.toggle('s--signup');
+        });
+
+
+        $("#switchForm").click(function () {
+            const isLoginVisible = $("#signin").is(':not(:hidden)');
+            if (isLoginVisible) {
+                $("#signin").hide();
+                $("#signup").show();
+            }
+        })
+        $("#switchForm1").click(function () {
+            const isLoginVisible = $("#signin").is(':not(:hidden)');
+            if (isLoginVisible) {
+                $("#signin").hide();
+                $("#signup").show();
+            } else {
+                $("#signin").show();
+                $("#signup").hide();
+            }
+        })
+
+    </script>
+</body>
+
+</html>

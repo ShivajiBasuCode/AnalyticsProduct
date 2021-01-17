@@ -1,0 +1,13 @@
+﻿Business Intelligence Solution 
+
+## Introduction
+
+ *Real-time analytics complements real-time operational systems. This is imperative for real-time analytics - the ability to use all  the available data resources at your disposal to improve your operations and quality of service, at the moment they are called for. Static reports on data that are month-old or week-old, transforming operational data into spreadsheets - these have lost their relevance.*
+
+ *Retail today is a challenging business. A lot depends on how the retailer takes control of the entire range of activities, 
+operations and processes. They are constantly striving for higher profit margins keeping their operating costs to minimum and it is very important to 
+understand / analyze the key elements of the business. Building a capability for providing (near) real-time analytics can lend itself to an enduring competitive 
+advantage for the retail organization.*
+
+*The need for capturing real-time data is critical for the Retail Business. ATA has been working with the 'Retail IT' alignment theme for the last few years. 
+Based on the competency and experience garnered ATA understands the retailer’s need of the hour and is planning to offer a Retail BI solution 'Realitycs'.*

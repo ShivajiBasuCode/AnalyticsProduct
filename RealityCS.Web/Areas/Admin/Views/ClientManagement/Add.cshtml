@@ -1,0 +1,191 @@
+﻿@model DTO_ClientInformation
+@{
+    ViewData["Title"] = "Add";
+}
+
+@section Scripts{
+    <script>
+        admin_clientmanagement.initaddpage();
+
+    </script>
+
+}
+
+
+<div class="row my-3 pb-2 border-bottom">
+
+    <div class="col-md-6">
+        <p class="title-text">User / <span style="color:#ccc">New</span></p>
+    </div>
+</div>
+
+<!--Entry Details Start-->
+<div class="shadow">
+
+    <nav class="font-size-14 rounded ">
+        <div class="nav nav-tabs rounded-nav nav-pills" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-info-tab" data-toggle="tab" href="#nav-info"
+               role="tab" aria-controls="nav-info" aria-selected="true">Client Information</a>
+
+
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+
+        <form id="frmAddclient" asp-antiforgery="true" asp-action="Add" asp-controller="ClientManagement" asp-area="admin" method="post"
+              data-ajax="true" data-ajax-method="POST" data-ajax-complete="admin_clientmanagement.addUserAjaxComplete">
+           
+            <input type="hidden" id="hdnClientID" asp-for="ClientID" />
+            <div class="tab-pane fade show active p-2" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+
+                <div class="d-lg-flex res-user-form ">
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="CompanyName"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <input type="text" class="form-control form-control-sm" asp-for="CompanyName" autocomplete="off">
+                        <span asp-validation-for="CompanyName" class="text-danger"></span>
+                    </div>
+
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="CityName"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <input type="text" class="form-control form-control-sm" asp-for="CityName">
+                        <span asp-validation-for="CityName" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="d-lg-flex res-user-form ">
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="CompanyAddress"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <textarea type="text" class="form-control form-control-sm" asp-for="CompanyAddress"></textarea>
+                        <span asp-validation-for="CompanyAddress" class="text-danger"></span>
+                    </div>
+
+
+                </div>
+
+                <div class="d-lg-flex res-user-form ">
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="ContactPersonName"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <input type="text" class="form-control form-control-sm" asp-for="ContactPersonName" />
+                        <span asp-validation-for="ContactPersonName" class="text-danger"></span>
+                    </div>
+
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="ContactEmail"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <input type="text" class="form-control form-control-sm" asp-for="ContactEmail">
+                        <span asp-validation-for="ContactEmail" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="d-lg-flex res-user-form ">
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="ContactMobileNo"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <input type="text" class="form-control form-control-sm" asp-for="ContactMobileNo" />
+                        <span asp-validation-for="ContactMobileNo" class="text-danger"></span>
+                    </div>
+
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="ContactPhoneNo"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <input type="text" class="form-control form-control-sm" asp-for="ContactPhoneNo">
+                        <span asp-validation-for="ContactPhoneNo" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="d-lg-flex res-user-form ">
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="DateCol"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <div class='input-group date' id='datetimepickerDateCol'>
+                            <input type='text' class="form-control form-control-sm" asp-for="DateCol" onkeydown="return false" />
+                            <span class="input-group-addon" style="border:none">
+                                <span class="fas fa-calendar-alt"></span>
+                            </span>
+                            <span asp-validation-for="DateCol" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="DateTimeCol"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <div class='input-group date' id='datetimepickerTimeCol'>
+                            <input type='text' class="form-control form-control-sm" asp-for="DateTimeCol" onkeydown="return false" />
+                            <span class="input-group-addon" style="border:none">
+                                <span class="fas fa-calendar-alt"></span>
+                            </span>
+                            <span asp-validation-for="DateTimeCol" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="d-lg-flex res-user-form ">
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="DropDownCol"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+                        <select class="form-control form-control-sm select2" asp-for="DropDownCol" data-selectedvalue="@Model.DropDownCol"></select>
+                        <span asp-validation-for="DropDownCol" class="text-danger"></span>
+                    </div>
+
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="MultiSelect"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+                        <select class="form-control form-control-sm select2" asp-for="MultiSelect" data-selectedvalue="@string.Join(',',Model.MultiSelect)"></select>
+                        <span asp-validation-for="MultiSelect" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mr-sm-2">
+                            <label class="font-size-13" asp-for="IsActive"></label>
+                            <input type="checkbox" asp-for="IsActive">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button type="submit" id="btnClientsave" class="btn btn-save-modalbtn btn-sm w-auto mb-4 ml-2">
+                Save
+
+            </button>
+            <button type="button" id="btnBack" class="btn btn-save-modalbtn btn-sm w-auto mb-4 ml-2" onclick="commonFunctions.goTo('admin/clientmanagement')">
+                Back
+
+            </button>
+        </form>
+
+
+    </div>
+</div>
+<!--Entry Details End-->

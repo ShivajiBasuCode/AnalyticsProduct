@@ -1,0 +1,144 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/"
+    },
+    {
+      "library": "jquery-validate@1.19.1",
+      "destination": "wwwroot/lib/jquery-validate/",
+      "files": [
+        "jquery.validate.min.js",
+        "additional-methods.js",
+        "additional-methods.min.js",
+        "jquery.validate.js"
+      ]
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css",
+      "destination": "wwwroot/lib/bootstrap/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js",
+      "destination": "wwwroot/lib/bootstrap/"
+    },
+    {
+      "library": "font-awesome@5.13.0",
+      "destination": "wwwroot/lib/font-awesome/"
+    },
+    {
+      "library": "jquery@3.4.1",
+      "destination": "wwwroot/lib/jquery/",
+      "files": [
+        "jquery.min.js"
+      ]
+    },
+    {
+      "library": "datatables@1.10.20",
+      "destination": "wwwroot/lib/datatables/",
+      "files": [
+        "js/jquery.dataTables.min.js",
+        "images/sort_asc.png",
+        "images/sort_asc_disabled.png",
+        "images/sort_both.png",
+        "images/sort_desc.png",
+        "images/sort_desc_disabled.png",
+        "js/dataTables.bootstrap4.min.js",
+        "css/dataTables.bootstrap4.min.css"
+      ]
+    },
+    {
+      "library": "datatables-buttons@2.2.0",
+      "destination": "wwwroot/lib/datatables/datatables-buttons/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://cdn.datatables.net/plug-ins/1.10.20/sorting/datetime-moment.js",
+      "destination": "wwwroot/lib/datatables/plugins"
+    },
+    {
+      "library": "moment.js@2.24.0",
+      "destination": "wwwroot/lib/moment.js/",
+      "files": [
+        "moment.min.js"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "select2@4.0.13",
+      "destination": "wwwroot/lib/select2/",
+      "files": [
+        "dist/js/select2.min.js",
+        "dist/js/select2.full.min.js",
+        "dist/css/select2.min.css"
+      ]
+    },
+    {
+      "library": "jquery-ajax-unobtrusive@3.2.6",
+      "destination": "wwwroot/lib/jquery-ajax-unobtrusive/"
+    },
+    {
+      "library": "pivottable@2.23.0",
+      "destination": "wwwroot/lib/pivottable/",
+      "files": [
+        "pivot.min.js",
+        "pivot.min.css"
+      ]
+    },
+    {
+      "library": "bootbox.js@5.4.0",
+      "destination": "wwwroot/lib/bootboxjs/",
+      "files": [
+        "bootbox.min.js"
+      ]
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "apexcharts@3.19.2",
+      "destination": "wwwroot/lib/apexcharts/",
+      "files": [
+        "dist/apexcharts.min.js",
+        "dist/apexcharts.min.css",
+        "dist/apexcharts.js",
+        "dist/apexcharts.css"
+      ]
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css",
+      "destination": "wwwroot/lib/bootstrap-datetimepicker/css"
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js",
+      "destination": "wwwroot/lib/bootstrap-datetimepicker/js"
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.5.0/jszip.min.js",
+      "destination": "wwwroot/lib/datatables/plugins/"
+    },
+    {
+      "provider": "filesystem",
+      "library": "https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css",
+      "destination": "wwwroot/lib/select2/select2-bootstrap-theme/"
+    },
+    {
+      "library": "jstree@3.3.10",
+      "destination": "wwwroot/lib/jstree/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "smartwizard@5.1.1",
+      "destination": "wwwroot/lib/smartwizard/",
+      "files": [
+        "dist/css/smart_wizard_all.min.css",
+        "dist/js/jquery.smartWizard.min.js"
+      ]
+    }
+  ]
+}

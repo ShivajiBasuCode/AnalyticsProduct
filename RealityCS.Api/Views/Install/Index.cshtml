@@ -1,0 +1,337 @@
+﻿@model RealityCS.DTO.Install.InstallModel
+@using System.Text.Encodings.Web
+@using RealityCS.DataLayer
+@using Microsoft.AspNetCore.Mvc.ModelBinding
+
+@inject RealityCS.BusinessLogic.Installation.IInstallationLocalizationService ILS
+
+
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>RealityCS - Installation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="@Url.Content("~/lib/bootstrap/css/bootstrap.min.css")" type="text/css" rel="stylesheet" />
+    <link href="@Url.Content("~/css/install.css")" type="text/css" rel="stylesheet" />
+    <script src="@Url.Content("~/lib/jquery/jquery-3.4.1.min.js")"></script>
+    <script src="@Url.Content("~/lib/jquery-validate/jquery.validate-v1.19.1/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/lib/jquery-validate/jquery.validate.unobtrusive-v3.2.11/jquery.validate.unobtrusive.min.js")"></script>
+    @*<script src="@Url.Content("~/js/site.js")"></script>*@
+</head>
+<body>
+    <div class="col-lg-3"></div>
+    <div class="col-lg-7" style="margin:auto">
+        <div class="content-header clearfix pt-5">
+            <div class="row">
+                <div class="col-3 pull-right">
+                    <select name="language" id="language" class="language-selector form-control" asp-items="">
+                        @foreach (var item in Model.AvailableLanguages)
+                        {
+                            <option @(item.Selected == true ? "selected" : "") id="@item.Value" value="@item.Value">@item.Text</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <form asp-action="Index" asp-controller="Install" id="installation-form" method="post">
+            <div class="card">
+                <div class="card-header pt-4">
+                    <p class="text-sm">@ILS.GetResource("Tooltip2")</p>
+                </div>
+                <div class="card-body">
+                    <div class="content">
+
+                        <div class="col-12">
+
+                            <div style="color:red">
+                                <ul>
+                                    @foreach (ModelStateEntry modelState in ViewData.ModelState.Values)
+                                    {
+                                        foreach (ModelError error in modelState.Errors)
+                                        {
+                                            <li>@error.ErrorMessage</li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-4 text-right" style="color:black;">
+                                            @ILS.GetResource("StoreInformation")
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+
+                                    <div class="form-group">
+                                        <label>@ILS.GetResource("AdminEmail")</label>
+                                        <input name="AdminEmail" value="@Model.AdminEmail" type="email" class="form-control" placeholder="Email" autofocus="autofocus" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>
+                                            @ILS.GetResource("AdminPassword")
+                                        </label>
+                                        <input name="AdminPassword" type="password" value="@Model.AdminPassword" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>
+                                            @ILS.GetResource("ConfirmPassword")
+                                        </label>
+                                        <input name="ConfirmPassword" type="password" value="@Model.ConfirmPassword" class="form-control" />
+                                    </div>
+
+                                    @if (!Model.DisableSampleDataOption)
+                                    {
+                                        <div class="form-group">
+                                            <label>
+                                                <input type="checkbox" checked name="InstallSampleData" value="true" />
+                                                <input type="hidden" name="InstallSampleData" value="false" />
+                                                @ILS.GetResource("CreateSampleData")
+                                            </label>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-4 text-right">
+                                            @ILS.GetResource("DatabaseInformation")
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label>
+                                            @ILS.GetResource("Database")
+                                        </label>
+
+                                        <div class="radio">
+                                            <label>
+                                                <input name="DataProvider" value="sqlserver" type="radio" checked="@(Model.DataProvider == DataProviderType.SqlServer)" id="provider_sqlserver" />
+                                                @ILS.GetResource("SqlStandard")
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div id="sqlConnectionInfo">
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="true" checked name="SqlServerCreateDatabase" />
+                                                    @ILS.GetResource("CreateDatabaseIfDoesNotExist")
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+
+                                            <label>
+                                                @ILS.GetResource("ConnectionString")
+                                            </label>
+                                            <div class="radio">
+                                                <label>
+                                                    <input name="SqlConnectionInfo" value="sqlconnectioninfo_values" type="radio" checked="@(Model.SqlConnectionInfo == "sqlconnectioninfo_values")" id="sqlconnectioninfo_values" />
+                                                    @ILS.GetResource("ConnectionStringValues")
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input name="SqlConnectionInfo" value="sqlconnectioninfo_raw" type="radio" checked="@(Model.SqlConnectionInfo == "sqlconnectioninfo_raw")" id="sqlconnectioninfo_raw" />
+                                                    @ILS.GetResource("RawConnectionString")
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div id="sqlDatabaseInfo">
+                                            <div class="credentials">
+                                                <div class="form-group">
+                                                    <label>
+                                                        @ILS.GetResource("SqlServerName")
+                                                    </label>
+                                                    <input name="SqlServerName" value="192.168.1.103" class="form-control" />
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>
+                                                        @ILS.GetResource("DatabaseName")
+                                                    </label>
+
+                                                    <input name="SqlDatabaseName" value="Realitycs_piyush" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    @ILS.GetResource("SqlServerName")
+                                                </label>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input name="SqlAuthenticationType" value="windowsauthentication" type="radio" checked="@(Model.SqlAuthenticationType == "windowsauthentication")" id="sqlauthenticationtype_windows" />
+                                                        @ILS.GetResource("WindowsAuthentication")
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input name="SqlAuthenticationType" value="sqlauthentication" type="radio" checked="@(Model.SqlAuthenticationType == "sqlauthentication")" id="sqlauthenticationtype_sql" />
+                                                        @ILS.GetResource("SqlAuthentication")
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="credentials" id="pnlSqlServerCredentials">
+                                                <div class="form-group">
+                                                    <label>
+                                                        @ILS.GetResource("SqlServerUsername")
+                                                    </label>
+
+                                                    <input name="SqlServerUsername" value="RelaityCS" class="form-control" />
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>
+                                                        @ILS.GetResource("SqlServerPassword")
+                                                    </label>
+
+                                                    <input name="SqlServerPassword" type="password" value="relaitycs@123" class="form-control" />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" id="sqlDatabaseConnectionString">
+                                            <label class="control-label">
+                                                @ILS.GetResource("ConnectionString")
+                                            </label>
+
+                                            <input name="DatabaseConnectionString" class="form-control" />
+                                            <span class="hint">
+                                                @ILS.GetResource("Example"):<br />
+                                                Data Source=sqlServerName;Initial Catalog=dbName;Persist Security Info=True;User
+                                                ID=userName;Password=password
+                                                <br />
+                                                Find more info <a href="http://www.connectionstrings.com/" target="_blank">here</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group margin-t-30">
+                                        <div class="col-xs-12 text-center">
+                                            <button type="submit" style="width:160px" class="btn btn-md btn-primary fullwidth margin-l-5">@ILS.GetResource("Install")</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+        <div class="content-footer">
+            <form asp-action="RestartInstall" asp-controller="Install" novalidate id="restart-form" method="post">
+                <div class="row">
+                    <div class="col-12 text-center pt-2">
+                        <button type="submit" class="btn btn-md btn-outline-danger" title="@ILS.GetResource("RestartInstallationTooltip")">@ILS.GetResource("RestartInstallation")</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="throbber">
+            <div class="curtain">
+            </div>
+            <div class="curtain-content">
+                <div>
+                    <h1 class="throbber-header">Wait...</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        $(function () {
+            $('#installation-form').submit(function () {
+                if ($('#installation-form').valid()) {
+                    $("html, body").animate({ scrollTop: 0 }, 400);
+                    showThrobber('@Html.Raw(JavaScriptEncoder.Default.Encode(ILS.GetResource("Installing")))');
+                    $('input[type=submit]', this).attr('disabled', 'disabled');
+                }
+            });
+        });
+
+        $(function () {
+            $('#restart-form').submit(function () {
+                $("html, body").animate({ scrollTop: 0 }, 400);
+                showThrobber('@Html.Raw(JavaScriptEncoder.Default.Encode("Restarting..."))');
+                $('input[type=submit]', this).attr('disabled', 'disabled');
+            });
+        });
+
+        $(function () {
+
+            $('input:radio[name=DataProvider]').click(toggleProvider);
+            $('input:radio[name=SqlConnectionInfo]').click(toggleSqlConnectionInfo);
+            $('input:radio[name=SqlAuthenticationType]').click(toggleSqlAuthenticationType);
+
+            toggleProvider();
+            toggleSqlConnectionInfo();
+            toggleSqlAuthenticationType();
+        });
+
+        $(function () {
+
+            $('#language').change(function () {
+
+                var url = '/Install/ChangeLanguage?language=' + $(this).val();
+
+                window.location.href = url;
+            });
+        });
+
+        function showThrobber(message) {
+            $('.throbber-header').html(message);
+            window.setTimeout(function () {
+                $(".throbber").show();
+            }, 1000);
+        }
+
+        function toggleProvider() {
+            var selectedProvider = $("input[name=DataProvider]:checked").attr('id');
+            if (selectedProvider == 'provider_sqlce') {
+                $('#sqlConnectionInfo').hide();
+            } else if (selectedProvider == 'provider_sqlserver') {
+                $('#sqlConnectionInfo').show();
+            }
+        }
+
+        function toggleSqlConnectionInfo() {
+            var selectedProvider = $("input[name=SqlConnectionInfo]:checked").attr('id');
+            if (selectedProvider == 'sqlconnectioninfo_values') {
+                $('#sqlDatabaseInfo').show();
+                $('#sqlDatabaseConnectionString').hide();
+            } else if (selectedProvider == 'sqlconnectioninfo_raw') {
+                $('#sqlDatabaseInfo').hide();
+                $('#sqlDatabaseConnectionString').show();
+            }
+        }
+
+        function toggleSqlAuthenticationType() {
+            var selectedProvider = $("input[name=SqlAuthenticationType]:checked").attr('id');
+            if (selectedProvider == 'sqlauthenticationtype_sql') {
+                $('#pnlSqlServerCredentials').show();
+            } else if (selectedProvider == 'sqlauthenticationtype_windows') {
+                $('#pnlSqlServerCredentials').hide();
+            }
+        }
+    </script>
+</body>
+</html>

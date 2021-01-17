@@ -1,0 +1,145 @@
+﻿@model DTOUser
+@{
+    ViewData["Title"] = "Add";
+}
+
+@section Scripts{
+    <script>
+        admin_usermanagement.init()
+    </script>
+
+}
+
+
+<div class="row my-3 pb-2 border-bottom">
+
+    <div class="col-md-6">
+        <p class="title-text">User / <span style="color:#ccc">New</span></p>
+        @* <label class="btn btn-custom-active btn-sm w-auto" id="saveBtn"
+                   data-toggle="modal" data-target="#saveModal">
+                <a>Save</a>
+            </label> *@
+    </div>
+</div>
+
+<!--Entry Details Start-->
+<div class="shadow">
+
+    <nav class="font-size-14 rounded ">
+        <div class="nav nav-tabs rounded-nav nav-pills" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-info-tab" data-toggle="tab" href="#nav-info"
+               role="tab" aria-controls="nav-info" aria-selected="true">User Information</a>
+
+
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+
+        <form id="frmAdduser" asp-action="AddUser" asp-controller="Usermanagement" asp-area="RealityCS" method="post" data-ajax="true" data-ajax-method="POST" data-ajax-complete="axiom_usermanagement.addUserAjaxComplete">
+            <input type="hidden" id="hdnId" asp-for="Id" />
+            <div class="tab-pane fade show active p-2" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+                <div class="d-lg-flex res-user-form ">
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label for="colFormLabelSm" class="col-form-label col-form-label-sm font-size-13">Name</label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <input type="text" class="form-control form-control-sm" asp-for="FirstName">
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <input type="text" class="form-control form-control-sm" asp-for="MiddleName">
+
+                    </div>
+                    <div class="width-31 mb-2">
+
+                        <input type="text" class="form-control form-control-sm" asp-for="LastName">
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+
+                    </div>
+                </div>
+               
+
+                <div class="d-lg-flex res-user-form ">
+                    <div class="w-auto mb-2 pr-4">
+                        <label for="colFormLabelSm" class="col-form-label col-form-label-sm font-size-13">Gender</label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+                        <select class="form-control form-control-sm" asp-for="Gender">
+                            <option value="" selected>Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="w-auto mb-2 mr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="Role"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+                        <select id="ddlRole" class="form-control form-control-sm" asp-for="Role" data-selected-value="@Model.Role">
+                        </select>
+                        <span asp-validation-for="Role" class="text-danger"></span>
+                    </div>
+                    <div class="w-auto mb-2 mr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="RepotsTo"></label>
+                    </div>
+                    <div class="width-31 mb-2">
+                        <select id="ddlRepotsTo" class="form-control form-control-sm" asp-for="RepotsTo" data-selected-value="@Model.RepotsTo">
+                        </select>
+                        <span asp-validation-for="RepotsTo" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="d-lg-flex res-user-form">
+                    <div class="w-auto mb-2 mr-3 pr-3">
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="Email"></label>
+                    </div>
+                    <div class="width-31 mr-3 mb-2">
+
+                        <input type="text" class="form-control form-control-sm" asp-for="Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    @if (Model.Id <= 0)
+                    {
+                    <div class="w-auto mb-2 mr-3">
+
+                        <label class="col-form-label col-form-label-sm font-size-13" asp-for="Password"></label>
+
+                    </div>
+                    <div class="width-31 mb-2">
+
+                        <input type="password" class="form-control form-control-sm" asp-for="Password">
+                        <span id="spanPassword" asp-validation-for="Password" class="text-danger"></span>
+
+                    </div>
+                    }
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mr-sm-2">
+                            @*custom-control custom-checkbox*@
+                            <label class="font-size-13" asp-for="IsActive"> Active</label>@*custom-control-label*@
+                            <input type="checkbox" asp-for="IsActive"> @*class="custom-control-input"*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="btnUsersave" class="btn btn-save-modalbtn btn-sm w-auto mb-4 ml-2">
+                Save
+
+            </button>
+            <button type="button" id="btnBack" class="btn btn-save-modalbtn btn-sm w-auto mb-4 ml-2" onclick="commonFunctions.goTo('admin/Usermanagement')">
+                Back
+
+            </button>
+        </form>
+
+
+    </div>
+</div>
+<!--Entry Details End-->
+
+

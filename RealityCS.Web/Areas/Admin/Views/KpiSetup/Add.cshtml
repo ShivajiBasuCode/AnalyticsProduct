@@ -1,0 +1,176 @@
+﻿@model DTO_KPI
+@{
+    ViewData["Title"] = "Add";
+}
+@section Scripts{
+
+    <script>
+        $(document).ready(function () {
+
+
+             fillcombo.kpiIndustries('ddlKpiIndustryID')
+            
+
+            fillcombo.kpiTypes('ddlKpiType')
+
+            var btnFinish = $('<button id="btnFinish"></button>').text('Save')
+                .css({ "display": "none" })
+                .addClass('btn btn-info')
+                .on('click', SaveData);
+
+            // SmartWizard initialize
+            $('#smartwizard').smartWizard({
+                theme: 'arrows',
+                enableURLhash: false,
+                toolbarSettings: {
+                    toolbarExtraButtons: [btnFinish] // Extra buttons to show on toolbar, array of jQuery input/buttons elements
+                },
+            });
+
+            $("#smartwizard").on("leaveStep", function (e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
+                if (stepDirection == "forward") {
+                    if (!commonFunctions.validateForm('frmAddKpi')) {
+                        return false;
+                    }
+                }
+                if (nextStepIndex == 0) {
+                    $("#btnFinish").hide()
+                }
+                if (nextStepIndex == 1) {
+                    $("#btnFinish").show()
+                }
+            });
+            function SaveData() {
+                $("#frmAddKpi").submit()
+            }
+
+            completed = function (xhr) {
+                alert(`Hi ${xhr.responseText}!`);
+            };
+
+        });
+    </script>
+
+}
+
+<div class="shadow">
+
+    <nav class="font-size-14 rounded ">
+        <div class="nav nav-tabs rounded-nav nav-pills" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-info-tab" data-toggle="tab" href="#nav-info"
+               role="tab" aria-controls="nav-info" aria-selected="true">KPI Setup</a>
+
+
+        </div>
+    </nav>
+
+    <div class="tab-content" id="nav-tabContent">
+        <div id="smartwizard">
+            <ul class="nav">
+                <li>
+                    <a class="nav-link" href="#step-1">
+                        KPI Configaration
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#step-2">
+                        Query Builder
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+
+                <form id="frmAddKpi" asp-action="AddKpi" asp-controller="KpiSetup" asp-area="admin" method="post" data-ajax="true" data-ajax-method="POST" data-ajax-complete="completed">
+                    <input type="hidden" id="hdnId" asp-for="KPI_ID"/>
+                    <div class="tab-pane fade show active p-2" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
+
+
+                        <div id="step-1" class="tab-pane" role="tabpanel">
+                            <div class="d-lg-flex res-user-form ">
+                                <div class="w-auto mb-2 mr-3 pr-3">
+                                    <label for="colFormLabelSm" class="col-form-label col-form-label-sm font-size-13" asp-for="KPI_NAME"></label>
+                                </div>
+                                <div class="width-31 mr-3 mb-2">
+
+                                    <input type="text" class="form-control form-control-sm" asp-for="KPI_NAME" autocomplete="off">
+                                    <span asp-validation-for="KPI_NAME" class="text-danger"></span>
+                                </div>
+                                <div class="w-auto mb-2 mr-3">
+                                    <label class="col-form-label col-form-label-sm font-size-13" asp-for="KPI_DISPLAY_TEXT"></label>
+                                </div>
+                                <div class="width-31 mr-3 mb-2">
+                                    <input type="text" class="form-control form-control-sm" asp-for="KPI_DISPLAY_TEXT" autocomplete="off">
+                                    <span asp-validation-for="KPI_DISPLAY_TEXT" class="text-danger"></span>
+                                </div>
+                                <div class="w-auto mb-2 mr-3">
+                                    <label class="col-form-label col-form-label-sm font-size-13" asp-for="FK_KpiIndustryID"></label>
+                                </div>
+                                <div class="width-31 mb-2">
+                                    <select id="ddlKpiIndustryID" class="form-control form-control-sm" asp-for="FK_KpiIndustryID">
+                                    </select>@*data-selected-value="@Model.FK_KpiIndustryID"*@
+                                    <span asp-validation-for="FK_KpiIndustryID" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="d-lg-flex res-user-form ">
+                                <div class="w-auto mb-2 mr-3 pr-3">
+                                    <label for="colFormLabelSm" class="col-form-label col-form-label-sm font-size-13" asp-for="KPI_TYPE_ID"></label>
+                                </div>
+                                <div class="width-31 mr-3 mb-2">
+                                    <select id="ddlKpiType" class="form-control form-control-sm" asp-for="KPI_TYPE_ID">
+                                    </select>@*data-selected-value="@Model.FK_KpiIndustryID"*@
+                                    <span asp-validation-for="KPI_TYPE_ID" class="text-danger"></span>
+                                </div>
+                                <div class="w-auto mb-2 mr-3">
+                                    <label class="col-form-label col-form-label-sm font-size-13" asp-for="KPI_LEVEL"></label>
+                                </div>
+                                <div class="width-31 mr-3 mb-2">
+                                    <input type="text" class="form-control form-control-sm" asp-for="KPI_LEVEL" autocomplete="off">
+                                    <span asp-validation-for="KPI_LEVEL" class="text-danger"></span>
+                                </div>
+                                <div class="w-auto mb-2 mr-3">
+                                    <label class="col-form-label col-form-label-sm font-size-13" asp-for="VERTICAL_LABEL"></label>
+                                </div>
+                                <div class="width-31 mr-3 mb-2">
+                                    <input type="text" class="form-control form-control-sm" asp-for="VERTICAL_LABEL" autocomplete="off">
+                                    <span asp-validation-for="VERTICAL_LABEL" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="d-lg-flex res-user-form ">
+                                <div class="w-auto mb-2 mr-3 pr-3">
+                                    <label for="colFormLabelSm" class="col-form-label col-form-label-sm font-size-13" asp-for="KPI_SP_NAME"></label>
+                                </div>
+                                <div class="width-31 mr-3 mb-2">
+                                    <input type="text" class="form-control form-control-sm" asp-for="KPI_SP_NAME" autocomplete="off">
+                                    <span asp-validation-for="KPI_SP_NAME" class="text-danger"></span>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                        <div id="step-2" class="tab-pane" role="tabpanel">
+                            <div class="d-lg-flex res-user-form ">
+                                <div class="w-auto mb-2 mr-3 pr-3">
+                                    <label for="colFormLabelSm" class="col-form-label col-form-label-sm font-size-13" asp-for="SQLQuery"></label>
+                                </div>
+                                <div class="w-100 mr-3 mb-2">
+
+                                    <textarea class="form-control form-control-sm" asp-for="SQLQuery" rows="10"></textarea>
+                                    <span asp-validation-for="SQLQuery" class="text-danger"></span>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

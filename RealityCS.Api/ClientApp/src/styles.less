@@ -1,0 +1,125 @@
+
+// variables starts here
+
+@link-color:        #428bca; // sea blue
+@link-color-hover:  darken(@link-color, 10%);
+
+@btn-bg-yellow: #ffc223;
+@btn-txt-yellow: #22211f;
+
+@txt-blue: #2d3b90;
+@error: #ea0000;
+
+@bg-blue: #083377;
+@bg-white: #ffffff;
+
+// variables ends here
+
+body {background:@bg-blue;}
+.h-80 {min-height:75vh;}
+
+
+.login {background:#043175; height: 100vh;
+    h2 {color:#f9f9f9;}
+    p {color:#f9f9f9;}
+
+    .loginimage {background:url("../img/shape-1.png") no-repeat; background-position: center; display: block; height:500px;}
+}
+
+.login-forms {background:@bg-white;}
+
+.clienttabs {
+
+    .nav-pills .nav-link.active {background-color:@btn-bg-yellow; color:@btn-txt-yellow;}
+    .nav-pills .nav-link {padding: 18px 15px 18px; border-radius: 50%; height: 60px; width: 60px; background-color: none;}
+    .nav-pills .nav-link i {font-size:27px;}
+}
+
+.loginforms {
+    .form-outline {border-radius:0; background:#e5e5e5;}
+
+    .input-group-text i {margin-top:5px; opacity:0.8;}
+
+    .input-group>.form-control, .input-group-text {border-radius: 0; border-color:#e5e5e5;}
+    
+    .input-group, .form-control {background:#e5e5e5; padding-top:5px; padding-bottom:5px; border-radius:3px;}
+
+    a {color:#4a4a4a; font-size:13px; text-decoration: underline; display: inline-block;}
+
+    button {background-color:@btn-bg-yellow; color:@btn-txt-yellow;}
+}
+
+
+footer {
+    p {color:#4a4a4a;}
+}
+
+
+
+// Side menu
+
+.sidenav {
+    background:@bg-blue; height: 100vh;
+
+    ul li a{ text-align: center; color:#f9f9f9; padding-top:25px; padding-bottom:25px; border-bottom:1px dashed #f1f1f140; font-size:12px; display: block;
+        &.active {background:@btn-bg-yellow; color: @btn-txt-yellow;
+            &.active i {color:@btn-txt-yellow}
+        }
+    }
+    ul li a i {font-size:26px; display: block; color:#f9f9f9; margin-bottom:5px;}
+    ul li a span {width:70%; display: block; margin: 0 auto; line-height:16px;}
+
+}
+
+@media (max-width:787px) {
+    .sidenav {
+        ul li a {padding: 15px;}
+        ul li a span {display:none;}
+    }
+
+}
+
+.headlogos {background-color:#ffffff;}
+
+#content {background-color:#e0e0e0;}
+.navbar-top {border-top:1px solid #4a4a4a10;
+    .nav-link {padding:0px 28px 0 0 !important; font-size:13px;}
+    
+
+    button.logout {color:#858688; border-left:1px solid #858688 !important; border-radius:0; padding: .1rem 0.775rem .075rem;}
+}
+
+
+.content-main {background:#ffffff;
+
+    h3 {color:@txt-blue; font-size:15px;}
+    h3 span {color:#858688;}
+    .heading-note {color:#858688; font-size: 11px;}
+    .error {color:@error;}
+
+    .form .form-label {margin:0; font-size:12px;}
+
+    .btn-floating {width:1.15rem; height:1.15rem; line-height:1.4; padding:0;
+        .fas {width:0.75rem; height:0.75rem; line-height: 0.75rem;}
+    }
+    .select.form-control {background:#ffffff url('../img/select-down-arrow.jpg') no-repeat; background-position:center right;}
+    button {background-color:@btn-bg-yellow; color:@btn-txt-yellow;}
+    button.btn-link {background:none;}
+    thead {box-shadow:0 5px 5px #12121230;}
+}
+
+.h-82 {min-height:82vh;}
+.input-height3 {min-height:300px;}
+.input-height3.scrollh {overflow-x: auto; max-height:300px;}
+
+
+
+.modal {
+    .modal-header {border:0;}
+    h3 {
+        color: #2d3b90;
+        font-size: 15px;
+    }
+
+    .btn-primary {background-color:@btn-bg-yellow; color:@btn-txt-yellow;}
+}

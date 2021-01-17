@@ -1,0 +1,5 @@
+﻿@model IEnumerable<object>
+@foreach (var filepath in Model)
+{
+    <link href="@Url.Content(filepath.ToString())" rel="stylesheet" asp-append-version="true" />
+}

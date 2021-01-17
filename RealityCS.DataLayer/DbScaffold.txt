@@ -1,0 +1,7 @@
+﻿dotnet ef dbcontext scaffold "Server=KUNTAL;user id=sa;password=Rattlesnak3;Database=AXIOM_NRTOA_Parser;MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer --context-dir Context/Axiom -c AxiomContext -o Context/Axiom/ContextModels -f --use-database-names --verbose
+
+dotnet ef dbcontext scaffold "Server=KUNTAL;user id=sa;password=Rattlesnak3;Database=Apollo_NRTOA_Parser;MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer --context-dir Context/Apollo -c ApolloContext -o Context/Apollo/ContextModels -f --use-database-names --verbose
+
+dotnet ef dbcontext scaffold "Server=KUNTAL;user id=sa;password=Rattlesnak3;Database=Realitycs_Client;MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer --context-dir Context/RealitycsClient -c RealitycsClientContext -o Context/RealitycsClient/ContextModels -f --use-database-names --verbose
+
+dotnet ef dbcontext scaffold "Server=DESKTOP-67LNEE0;user id=sa;password=Mssql@1104$;Database=Realitycs_Client;MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer --context-dir Context/RealitycsClient -c RealitycsClientContext -o Context/RealitycsClient/ContextModels -f --use-database-names --verbose

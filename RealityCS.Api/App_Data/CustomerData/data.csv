@@ -1,0 +1,6 @@
+MemoNo,MemoType,DepotName,ProductName,TradePrice,ProductVAT,Quantity,TradeAmount,VATAmount,DiscountAmount,FlatRate,FMax,FQty,BatchNo,CreatedDate
+0000001 ,C,CHITTAGONG                                        ,RENAMET BOULS 2GM TAB 5X4'S,67,0,2,134,23.34,3.3500000000000001,0,0,0,,2020-11-10 15:55:02.630                                                  
+0000001 ,C,CHITTAGONG                                        ,RENAMET BOULS 2GM TAB 5X4'S,67,0,2,134,23.34,3.3500000000000001,0,0,0,,2020-11-12 15:55:02.630
+0000002 ,C,CHITTAGONG                                        ,DELTASONE 20MG TAB (5X10'S),234.5,0,1,234.5,40.799999999999997,5.8624999999999998,0,0,0,,2020-11-13 15:55:02.630
+0000002 ,C,CHITTAGONG                                        ,ZITHRIN FC 500MG TAB (3X5'S),393.60000000000002,0,1,393.60000000000002,68.489999999999995,9.8399999999999999,0,0,0,,2020-11-14 15:55:02.630                                                
+0000004 ,D,CHITTAGONG                                        ,STOMAVET POWDER 20GM SACHET,8.4100000000000001,0,100,841,159,0,8.4100000000000001,0,0,,2020-11-17 15:55:02.630

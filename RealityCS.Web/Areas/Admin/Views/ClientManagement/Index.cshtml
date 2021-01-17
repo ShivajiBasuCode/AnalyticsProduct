@@ -1,0 +1,78 @@
+﻿@model DTO_ClientInformationSearch
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section Scripts{
+
+    <script>
+
+        admin_clientmanagement.initlistpage();
+
+
+    </script>
+}
+
+<div class="row my-3 border-bottom">
+
+    <div class="col-md-6">
+        <p class="title-text">Clients</p>
+        <div id="createBtn">
+            <label class="btn btn-custom-active  btn-sm w-auto">
+                <a asp-area="admin" asp-controller="clientmanagement" asp-action="Add">Create</a>
+            </label>
+
+        </div>
+    </div>
+    @**@
+</div>
+@*<form id="frmSearchclient" asp-antiforgery="true" asp-action="List" asp-controller="ClientManagement" asp-area="admin" method="post"
+      data-ajax="true" data-ajax-method="POST" data-ajax-complete="admin_clientmanagement.searchAjaxComplete">
+
+    </form>*@
+
+    <div class="row my-3 border-bottom">
+        <div class="col-md-3">
+            <div class="px-1 bg-light rounded rounded-pill shadow-sm d-flex mb-2">
+                <div class="input-group">
+                    <select class="form-control form-control-sm select2" asp-for="Field"></select>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="px-1 bg-light rounded rounded-pill shadow-sm d-flex mb-2">
+                <div class="input-group">
+                    <input type="search" asp-for="Query" placeholder="Search by name" aria-describedby="button-addon1"
+                           class="form-control border-0 bg-light font-size-14" autocomplete="off">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <label>Include Inactive</label>
+            <input type="checkbox" asp-for="IncludeInactive" />
+        </div>
+
+        <div class="col-md-2">
+            <label>Include Deleted</label>
+            <input type="checkbox" asp-for="IncludeDeleted" />
+        </div>
+
+        <div class="col-md-2">
+            <button id="button-addon1" type="button" class="btn btn-link search-text-color w-25 font-size-14" onclick="admin_clientmanagement.List()">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <div id="load">
+
+        <div class="table-responsive">
+            <table class="table table-hover text-center table-sm font-size-14" id="dtclientlist">
+            </table>
+        </div>
+
+    </div>
+
+
+

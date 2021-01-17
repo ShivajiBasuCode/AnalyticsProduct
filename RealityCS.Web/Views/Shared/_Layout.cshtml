@@ -1,0 +1,159 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RealityCS</title>
+    <cache expires-after="@TimeSpan.FromDays(30)">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    </cache>
+
+    <link href="~/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+
+    @*<link href="~/lib/metisMenu/metisMenu.min.css" rel="stylesheet" />*@
+
+    @*select2*@
+    <link href="~/lib/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="~/lib/select2/select2-bootstrap-theme/select2-bootstrap.min.css" rel="stylesheet" />
+    @*select2*@
+
+    <link href="~/css/metisMenu/metisMenu.min.css" rel="stylesheet" />
+    <link href="~/css/metisMenu/metisMenu-vertical.css" rel="stylesheet" />
+    <link href="~/js/scrollbar/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+    @*<link href="~/css/template.style.css" rel="stylesheet" />*@
+    <link href="~/css/main_style.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/style.css" rel="stylesheet" asp-append-version="true" />
+    <link href="~/css/responsive.css" rel="stylesheet" asp-append-version="true" />
+
+    @*Jquery Datatables*@
+    <link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    @*Jquery Datatables*@
+
+    @*Pivottable.js*@
+    @*<link href="~/lib/pivottable/pivot.min.css" rel="stylesheet" />*@
+    @*Pivottable.js*@
+
+    <link href="~/css/metisMenu/metisMenu.min.css" rel="stylesheet" />
+    <link href="~/js/bootnavbar/bootnavbar.css" rel="stylesheet" />
+
+    @*bootstrap-datetimepicker*@
+    <link href="~/lib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    @*bootstrap-datetimepicker*@
+
+    @*jsTree*@
+    <link href="~/lib/jstree/themes/default/style.min.css" rel="stylesheet" />
+    @*jsTree*@
+
+    @*smartwizard*@
+    <link href="~/lib/smartwizard/dist/css/smart_wizard_all.min.css" rel="stylesheet" />
+    @*smartwizard*@
+
+    <environment include="Development">
+        <vc:css-link-generator root-folder-name="module_style"></vc:css-link-generator>
+    </environment>
+
+    <environment exclude="Development">
+        <vc:css-link-generator root-folder-name="module_scripts_css_minified/css"></vc:css-link-generator>
+    </environment>
+
+
+
+</head>
+<body style="overflow-x: hidden;">
+
+
+
+    @await Html.PartialAsync("_Header")
+
+    <div class="d-flex">
+        @await Html.PartialAsync("_LeftMenu")
+        <div class="all-content-wrapper">
+            <div class="row mt-mb-70 ml-mr-10 content-bgcolor">
+                <div class="container-fluid pr-0">
+                    @RenderBody()
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_Footer")
+
+
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/font-awesome/js/all.min.js"></script>
+    <script src="~/lib/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="~/css/metisMenu/metisMenu.min.js"></script>
+    <script src="~/css/metisMenu/metisMenu-active.js"></script>
+    <script src="~/js/bootnavbar/bootnavbar.js"></script>
+    <script src="~/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/js/scrollbar/mCustomScrollbar-active.js"></script>
+
+    <script src="~/lib/moment.js/moment.min.js"></script>
+    @*unobtrusive*@
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+    @*unobtrusive*@
+    @*JQuery Datatable*@
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/lib/datatables/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="~/lib/datatables/datatables-buttons/js/buttons.flash.min.js"></script>
+    <script src="~/lib/datatables/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="~/lib/datatables/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="~/lib/datatables/plugins/jszip.min.js"></script>
+    <script src="~/lib/datatables/plugins/datetime-moment.js"></script>
+    @*JQuery Datatable*@
+    <script src="~/lib/select2/dist/js/select2.full.min.js"></script>
+
+    @*Pivottable.js*@
+    <script src="~/lib/pivottable/pivot.min.js"></script>
+    @*Pivottable.js*@
+
+    @*bootbox*@
+    <script src="~/lib/bootboxjs/bootbox.min.js"></script>
+    @*bootbox*@
+
+    @*bootstrap-datetimepicker*@
+    <script src="~/lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    @*bootstrap-datetimepicker*@
+
+    @*jsTree*@
+    <script src="~/lib/jstree/jstree.min.js"></script>
+    @*jsTree*@
+
+    @*smartwizard*@
+    <script src="~/lib/smartwizard/dist/js/jquery.smartWizard.min.js"></script>
+    @*smartwizard*@
+    <script src="~/js/00.globalFunctions.js"></script>
+    <script src="~/js/01.commonFunctions.js"></script>
+    <script src="~/js/02.globalAjaxEventHandlar.js"></script>
+    <script src="~/js/config.js"></script>
+    <script src="~/js/api-call.js"></script>
+    <environment include="Development">
+        <vc:js-link-generator root-folder-name="module_scripts"></vc:js-link-generator>
+    </environment>
+
+    <environment exclude="Development">
+        <vc:js-link-generator root-folder-name="module_scripts_css_minified/js"></vc:js-link-generator>
+    </environment>
+
+
+    <script>
+        $(document).ready(function () {
+            //select2 default theme,override inline if required (bootstrap/classic)
+            $.fn.select2.defaults.set("theme", "default");
+
+
+            $('#main_navbar').bootnavbar();
+            $('#menu1').metisMenu();
+        })
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

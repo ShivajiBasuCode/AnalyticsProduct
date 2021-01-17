@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Mvc.Razor
+@using RealityCS.Web.Utility
+@using RealityCS.SharedMethods
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment webhostenv
+@{
+   /*
+    Check user inside an area, and find is that area contains its _Layout file.
+    If Layout file found the set Layout=arealayout or set with default. 
+   */
+    string areaname=Convert.ToString(RazorViewEngine.GetNormalizedRouteValue(ViewContext, "area"));
+    string arealayout = new FileHelper(webhostenv).GetAreaLayout(areaname);
+
+    Layout =string.IsNullOrEmpty(arealayout)==true? "_Layout":arealayout;
+
+}

@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="row my-3 border-bottom">
+
+    <div class="col-md-6">
+        <p class="title-text">Users</p>
+        <div id="createBtn">
+            <label class="btn btn-custom-active  btn-sm w-auto">
+                <a asp-area="admin" asp-controller="Usermanagement" asp-action="Add">Create</a>
+            </label>
+
+        </div>
+    </div>
+    @**@
+</div>
+<div class="row my-3 border-bottom">
+    <div class="col-md-3">
+        <div class="px-1 bg-light rounded rounded-pill shadow-sm d-flex mb-2">
+            <div class="input-group">
+                <input type="search" id="txtSearchname"  placeholder="Search by name" aria-describedby="button-addon1"
+                       class="form-control border-0 bg-light font-size-14">
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="px-1 bg-light rounded rounded-pill shadow-sm d-flex mb-2">
+            <div class="input-group">
+                <input type="search" id="txtSearchemail" placeholder="Search by email" aria-describedby="button-addon1"
+                       class="form-control border-0 bg-light font-size-14">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <label>Active</label>
+        <input type="checkbox" id="chkIsactive" checked="checked">
+    </div>
+
+    <div class="col-md-3">
+        <button id="button-addon1" type="button" class="btn btn-link search-text-color w-25 font-size-14" onclick="admin_usermanagement.ListUsers()">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+</div>
+<div id="load">
+
+    <div class="table-responsive">
+        <table class="table table-hover text-center table-sm font-size-14" id="dtUserlist">
+        </table>
+    </div>
+
+</div>
+
+@section Scripts{
+
+    <script>
+
+        admin_usermanagement.ListUsers();
+
+        /* var x = document.getElementById("gridView");
+         var y = document.getElementById("tableView");
+         var z = document.getElementById("createView");
+         var act = document.getElementById("tableActivity");
+         var createBtn = document.getElementById("createBtn");
+
+         function grid() {
+             if (x.style.display = "flex") {
+                 y.style.display = "none";
+                 z.style.display = "none";
+                 act.style.display = "none";
+                 createBtn.style.display = "flex";
+             }
+         }
+         function list() {
+             if (y.style.display = "table") {
+                 x.style.display = "none";
+                 z.style.display = "none";
+                 act.style.display = "none";
+                 createBtn.style.display = "flex";
+             }
+         }
+         function activity() {
+             if (act.style.display = "table") {
+                 x.style.display = "none";
+                 y.style.display = "none";
+                 z.style.display = "none";
+                 createBtn.style.display = "none";
+             }
+         }
+         function noView() {
+             x.style.display = "none";
+             y.style.display = "none";
+             y.style.display = "none";
+             act.style.display = "none";
+             z.style.display = "block";
+         }
+         window.onload = noView;
+         */
+
+    </script>
+}

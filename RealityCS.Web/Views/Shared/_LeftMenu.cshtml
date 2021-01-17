@@ -1,0 +1,92 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
+@{
+    //string AssignRoleName = HttpContextAccessor.HttpContext.User.FindFirst(c => c.Type == "AssignRoleName").Value;
+}
+<!-- Start Left menu area -->
+<div class="left-sidebar-pro" style="min-height:100vh">
+    <nav id="sidebar" class="sidebar-bgcolor" style="height:100%">
+        <div class="sidebar-header">
+            <button type="button" id="sidebarCollapse" class="btn bar-button-pro btn-bgcolor header-drl-controller-btn navbar-btn btn-sidemenu-size">
+                <i class="fas fa-align-justify"></i>
+            </button>
+        </div>
+        <div class="left-custom-menu-adp-wrap comment-scrollbar">
+
+            <nav class="sidebar-nav left-sidebar-menu-pro">
+                @*
+                        AXIOM MENU
+                        <ul class="metismenu" id="menu1">
+                        <li>
+                            <a class="has-arrow" href="index.html">
+                                <i class="fas fa-star sidebar-icon-color"></i>&nbsp;
+                                <span class="mini-click-non sidebar-text-color">Favorite</span>
+                            </a>
+
+                            <ul class="submenu-angle" aria-expanded="true">
+                                @{
+                                    if (AssignRoleName != "Contract Recruiting Team Lead")
+                                    {
+                                        <li><a asp-area="axiom" asp-controller="home" asp-action=""><span class="mini-sub-pro">Dashboard</span></a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a asp-area="axiom" asp-controller="TeamleadDashboard" asp-action=""><span class="mini-sub-pro">Teamlead Dashboard</span></a></li>
+                                    }
+                                }
+
+
+
+                            </ul>
+
+                        </li>
+
+                        @if (AssignRoleName == "Administrator")
+                        {
+                            <li>
+                                <a class="has-arrow" href="index.html">
+                                    <i class="fas fa-star sidebar-icon-color"></i>&nbsp;
+                                    <span class="mini-click-non sidebar-text-color">Setup</span>
+                                </a>
+                                <ul class="submenu-angle" aria-expanded="true">
+                                    <li>
+                                        <a asp-area="axiom" asp-controller="Usermanagement" asp-action=""><span class=" mini-sub-pro">Manage Users</span></a>
+                                    </li>
+                                    <li>
+                                        <a asp-area="axiom" asp-controller="SyncData" asp-action=""><span class=" mini-sub-pro">Sync Api Data</span></a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                        }
+
+
+                    </ul>*@
+
+                <ul class="metismenu" id="menu1">
+                    <li>
+                        <a class="has-arrow" href="index.html">
+                            <i class="fas fa-star sidebar-icon-color"></i>&nbsp;
+                            <span class="mini-click-non sidebar-text-color">Setup</span>
+                        </a>
+                        <ul class="submenu-angle" aria-expanded="true">
+                            <li>
+                                <a asp-area="admin" asp-controller="clientmanagement" asp-action=""><span class=" mini-sub-pro">Client Management</span></a>
+                            </li>
+                            <li>
+                                <a asp-area="admin" asp-controller="Usermanagement" asp-action=""><span class=" mini-sub-pro">User Management</span></a>
+                            </li>
+                            <li>
+                                <a asp-area="admin" asp-controller="RoleManager" asp-action=""><span class=" mini-sub-pro">Role Manager</span></a>
+                            </li>
+                            <li>
+                                <a asp-area="admin" asp-controller="Benchmark" asp-action=""><span class=" mini-sub-pro">Benchmark</span></a>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </nav>
+</div>
+<!-- End Left menu area -->

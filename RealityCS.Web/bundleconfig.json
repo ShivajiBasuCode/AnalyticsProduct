@@ -1,0 +1,68 @@
+[
+  {
+    "outputFileName": "wwwroot/module_scripts_css_minified/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/**/*.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/module_scripts_css_minified/css/admin.min.css",
+    "inputFiles": [
+      "wwwroot/module_style/admin/*.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/module_scripts_css_minified/css/app_setup.min.css",
+    "inputFiles": [
+      "wwwroot/module_style/app_setup/*.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/module_scripts_css_minified/css/authentication.min.css",
+    "inputFiles": [
+      "wwwroot/module_style/authentication/*.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/module_scripts_css_minified/js/admin.min.js",
+    "inputFiles": [
+      "wwwroot/module_scripts/admin/**/*.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/module_scripts_css_minified/js/app_setup.min.js",
+    "inputFiles": [
+      "wwwroot/module_scripts/app_setup/*.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/module_scripts_css_minified/js/authentication.min.js",
+    "inputFiles": [
+      "wwwroot/module_scripts/authentication/*.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  }, 
+  
+  {
+    "outputFileName": "wwwroot/module_scripts_css_minified/js/common.min.js",
+    "inputFiles": [
+      "wwwroot/module_scripts/common/**/*.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  }
+  
+]

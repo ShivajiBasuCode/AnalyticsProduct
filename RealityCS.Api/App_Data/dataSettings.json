@@ -1,0 +1,6 @@
+﻿{
+  "DataConnectionString": "Data Source=192.168.1.103;Initial Catalog=Realitycs_shivaji;Integrated Security=False;Persist Security Info=False;User ID=RelaityCS;Password=relaitycs@123",
+  "DataProvider": "sqlserver",
+  "SQLCommandTimeout": null,
+  "RawDataSettings": {}
+}

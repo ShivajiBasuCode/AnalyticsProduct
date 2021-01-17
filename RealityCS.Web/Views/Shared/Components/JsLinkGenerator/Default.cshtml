@@ -1,0 +1,8 @@
+﻿@model IEnumerable<object>
+
+
+@foreach (var filepath in Model)
+{
+    <script src="@Url.Content(filepath.ToString())" asp-append-version="true"></script>
+    
+}
